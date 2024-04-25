@@ -1,0 +1,70 @@
+# Cofiguring Ansible Controle Node
+#
+# PRINCE BAJAJ
+1 Install required packages
+ Create a static host inventory file
+ Create a configuration file
+ Create and use static inventories to define groups of hosts
+ Manage parallelism
+PRINCE BAJAJ
+2Installing Ansible Version 2.8
+We will uninstall ansible 2.9 already installed on ansible-c.
+Before uninstalling ansible , we will save copy of ansible config file under /tmp directory for reference.
+To uninstall ansible , We will execute below command:
+dnf remove ansible
+After ansible 2.9 is uninstalled, we will install ansible 2.8 using pip:
+pip3 install ansible==2.8
+PRINCE BAJAJ
+3Task: Configure ansible configuration file with following default values.
+Ansible config file must be created in subdirectory tasks in ansible user’s home directory.
+Roles directory path should be /home/ansible/tasks/roles, in addition default path should also be considered.
+Inventory file with name mnodes should exist on path /home/ansible/tasks.
+Remote port 22 should be used for SSH connection.
+ User ansible should be used to connect to remote hosts.
+Privilege escalation must be disabled.
+Default module must be command module.
+Ansible should start 5 forks.
+Execute commands as ansible user:
+mkdir /home/ansible/tasks
+vim /home/ansible/tasks/ansible.cfg
+[defaults]
+inventory = /home/ansible/tasks/mnodes
+roles_path = /etc/ansible/roles:/home/ansible/tasks/roles
+remote_port = 22
+remote_user = ansible
+module_name = command
+forks = 5
+[privilege_escalation]
+become = False
+PRINCE BAJAJ
+4Task. Create inventory file ‘mnodes’ on the path defined in ansible config file with below requirements.
+ mhost1 must be part of host group prod1.
+ mhost2 must be part of host group prod2.
+ mhost3 and mhost4 must be part of webservers group.
+ prod1 and prod2 must be part of prod group.
+ group linux should include all managed hosts.
+ Make sure all hostnames used can be resolved to IP Address.
+vim /home/ansible/tasks/mnodes
+[prod1]
+mhost1
+[prod2]
+mhost2
+[webservers]
+mhost[3:4]
+[prod:children]
+prod1
+prod2
+[linux:children]
+prod
+webservers
+PRINCE BAJAJ
+5linux
+webservers
+mhost3
+mhost4
+prod
+prod1prod2
+mhost1mhost2
+PRINCE BAJAJ
+6
+

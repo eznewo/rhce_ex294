@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: creating multiple users using loop
+            user:
+                    name: "{{ item }}"
+                    state: present
+            loop:
+                    - aramando
+                    - carlos
+                    - vero
+                    - kaka

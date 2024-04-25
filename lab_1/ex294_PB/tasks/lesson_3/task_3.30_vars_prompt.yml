@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: false
+  vars_prompt:
+          - name: var
+            prompt: Enter ypur variable please 
+            private: no
+  tasks:
+          - name: Displaying variable
+            debug:
+                    msg: "{{ var }}"

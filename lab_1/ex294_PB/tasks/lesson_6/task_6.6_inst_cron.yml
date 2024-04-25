@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Installing Crond 
+            yum:
+                    name: cronie
+                    state: present
+
+          - name: Starting and enabling Crond service
+            service:
+                    name: crond
+                    state: started
+                    enabled: yes
+

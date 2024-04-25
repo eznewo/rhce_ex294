@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: false
+  vars_files:
+          - task_3.29_vars_file.yml
+  tasks:
+          - name: Display variable
+            debug:
+                    msg: "{{ users[1].name }}"

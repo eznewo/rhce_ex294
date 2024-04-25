@@ -1,0 +1,9 @@
+---
+- hosts: mh1
+  gather_facts: false
+  vars:
+          file_content: "{{ lookup('file', '/home/ansible/ansible/create_dir_file.sh') }}" 
+  tasks:
+          - name: Display file contents
+            debug:
+                    msg: "{{ file_content }}"

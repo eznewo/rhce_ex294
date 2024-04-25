@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: false
+  vars:
+          list:
+                  - item1
+                  - item2
+                  - item3
+  tasks:
+          - name: Display variable
+            debug:
+                    msg: "{{ list[1] }}"

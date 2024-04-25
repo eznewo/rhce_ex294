@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+          - name: Creating user
+            user:
+                    name: mark
+                    password: "{{ 'wawa' | password_hash('sha512') }}"

@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  vars_files: task_8.11_userslist.yml
+  tasks:
+          - name: Creating Users form list of files
+            user:
+                    name: "{{ item.username }}"
+                    state: present
+            loop: "{{ users }}"
+   

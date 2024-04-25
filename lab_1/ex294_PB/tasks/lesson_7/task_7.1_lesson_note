@@ -1,0 +1,30 @@
+# Using Scripts for SysAdmin Tasks
+
+PRINCE BAJAJ
+1Task. Create a script ‘file.sh’ to run Ansible Ad-Hoc commands for the following tasks.
+ Create one file /root/redhat/ex294/results on prod nodes.
+ Configure full permissions at group level and read/execution for others.
+ Set mark as user and group owner.
+ Create a symbolic link in /root directory with default name.
+vim file.sh
+ansible prod -m file -a “path=/root/redhat/ex294 state=directory” --become
+ansible prod -m file -a “path=/root/redhat/ex294/results mode=g+rwx,o+rx owner=mark group=mark state=touch” --become
+ansible prod -m file -a “src=/root/redhat/ex294/results dest=/root/results state=link” --become
+:wq
+Execute Command/Script as ansible user:
+chmod +x file.sh
+./file.sh
+PRINCE BAJAJ
+2Task. Create a script ‘user.sh’ to run Ansible Ad-Hoc commands for the following tasks.
+ Create user with username rhce on all managed nodes and set password as rhce_pass(Use encryption SHA512).
+ Create group with name ex294 and assign this as supplementary group to this user.
+ Use UID as 2021.
+vim user.sh
+ansible all -m group -a “name=ex294 state=present” --become
+ansible all -m user -a “name=rhce password=‘{{ ‘rhce_pass’ | password_hash(‘sha512’) }}’ groups=ex294 uid=2021” --become
+:wq
+Execute Command/Script as ansible user:
+chmod +x user.sh
+./user.sh
+PRINCE BAJAJ
+

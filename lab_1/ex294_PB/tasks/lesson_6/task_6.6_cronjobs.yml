@@ -1,0 +1,22 @@
+---
+- hosts: prod
+  become: true
+  tasks:
+          - name: Restarting syslog service on Prod nodes
+            cron:
+                    name: "restart rsyslog service"
+                    minute: "0"
+                    hour: "23,6"
+                    job: "/usr/bin/systemctl restart rsyslog"
+
+- hosts: webservers
+  become: true
+  tasks:
+          - name: Restarting syslog service on webservers nodes
+            cron:
+                    name: "restart rsyslog"
+                    minute: "0"
+                    hour: "2"
+                    weekday: "1"
+                    job: "/usr/bin/systemctl restart rsyslog"
+...

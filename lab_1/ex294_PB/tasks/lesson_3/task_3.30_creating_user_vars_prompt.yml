@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: false
+  vars_prompt:
+          - name: username
+            prompt: Enter Username
+            private: no
+          - name: password
+            prompt: Enter Password
+
+  tasks:
+          - name: Creating user 
+            debug:
+                    msg: "{{ username , password }}"

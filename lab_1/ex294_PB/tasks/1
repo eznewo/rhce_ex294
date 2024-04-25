@@ -1,0 +1,7 @@
+---
+- hosts: mh1
+  tasks:
+          - name: diplay facts variables
+            debug:
+                    msg: "{{ ansible_facts.devices }}"
+

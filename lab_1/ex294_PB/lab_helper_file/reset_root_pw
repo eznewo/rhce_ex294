@@ -1,0 +1,14 @@
+# Reseting a root password
+
+reboot
+'e' before loading the os
+then add 'rd.break' at the end of the line that has linux or linux16
+mount -o remount rw /sysroot
+chroot /sysroot
+passwd
+provide password 
+confirm 
+
+touch /.autorelabel
+exit
+reboot

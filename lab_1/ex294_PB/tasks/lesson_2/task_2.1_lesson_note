@@ -1,0 +1,71 @@
+# Setting up Lab Environment
+#
+# lesson 2 - lesson_note 
+
+PRINCE BAJAJ
+1LAB Setup Details
+• We will use 5 CentOS-8 VM’s installed using Oracle VirtualBox.
+• One Linux Machine with GUI (Workstation) and other 4 VM’s will be installed with minimum install option not to use enough
+resources of host machine which is practical approach in case you don’t have enough resources available on your host
+machine.
+• Minimum of 8GiB RAM is needed on host machine,16 GiB is preferred.
+• On Managed Nodes, we will leave some disk space free to add new partitions as a part of different tasks.
+VM NameSoftware Selection RAMHard disk SizeHostnameIP Address
+ansible-cWorkstation2+ GiB25 GiBansible-c.example.com192.168.99.1/24
+mhost1Minimum install1.5 GiB30 GiBmhost1.example.com192.168.99.10/24
+mhost2Minimum install1.5 GiB30 GiBmhost2.example.com192.168.99.20/24
+mhost3Minimum install1.5 GiB30 GiBmhost3.example.com192.168.99.30/24
+mhost4Minimum install1.5 GiB30 GiBmhost4.example.com192.168.99.40/24
+• We will install ansible-c VM using auto partitioning scheme.
+• On managed node VM’s, We will configure manual partitions (Custom partitioning) and we will leave some disk space free for
+practice tasks about disk management(/boot=300MiB, /home=10GiB, / = 12GiB, 7.71 GiB Free disk space).
+PRINCE BAJAJ
+2Setting Lab Environment
+192.168.99.10/24
+Ansible Managed Node 1 – mhost1
+192.168.99.20/24
+Ansible Managed Node 2 – mhost2
+192.168.99.1/24
+192.168.99.30/24
+Ansible Managed Node 3 – mhost3
+Ansible Control Node – ansible-c
+192.168.99.40/24
+Ansible Managed Node 4 – mhost4
+PRINCE BAJAJ
+3Configuring hosts file for Name Resolution on ansible-c
+We will use hosts file for local name resolution for same . Later in this course we will configure managed hosts to provide local
+DNS functionality as a part of one of the important objectives of RHCE Exam.
+vim /etc/hosts
+192.168.99.10 mhost1.example.commhost1
+192.168.99.20 mhost2.example.commhost2
+192.168.99.30 mhost3.example.commhost3
+192.168.99.40 mhost4.example.commhost4
+:wq
+To verify DNS functionality, execute
+getent hosts mhost1.example.com (Forward DNS lookup for mhost1)
+PRINCE BAJAJ
+4Installing Ansible Control Node
+On RHEL/CentOS, Ansible package is available through EPEL (Extra packages for enterprise linux) repository. So first we need to
+install epel-release package to make EPEL repository available.
+To install epel-release package, we need to connect VM to internet(Adding bridged interface) to use online repository and after
+package is installed, ansible package will become available and we will install ansible.
+On the exam, you will not have internet connection, so they would/should provide you with required package to be installed for
+ansible.
+dnf install epel-releaseTo make EPEL repo available
+dnf provides ansibleTo display ansible packages
+dnf install ansibleInstalling ansible
+ansible --versionDisplaying ansible version
+At this time, ansible version 2.9 is latest and ansible 2.9 version will be installed by default. However for exam we need to use
+ansible engine 2.8.
+We will install ansible 2.8 later before start doing tasks and we will practice all tasks on ansible version 2.8.
+PRINCE BAJAJ
+5Setting up SSH key authentication
+Before using ansible to manage remote hosts ,we will setup SSH key authentication between ansible-c and all other VM’s.
+To setup SSH private/public key authentication for root user, We will use for iteration on Ansible control node (ansible-c).
+#ssh-keygen -t rsa
+#for host in 1 2 3 4
+>do
+>ssh-copy-id mhost$host
+>done
+PRINCE BAJAJ
+6

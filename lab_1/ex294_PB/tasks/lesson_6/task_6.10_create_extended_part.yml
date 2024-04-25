@@ -1,0 +1,16 @@
+---
+- hosts: mh1
+  become: true
+  tasks:
+          - name: Reading Disk Info
+            parted:
+                    device: /dev/sdb
+                    unit: MiB
+            register: sdb_info
+          - name: Creating Extended Partion
+            parted:
+                    device: /dev/sdb
+                    number: "2"
+                    part_type: extended
+                    part_start: "{{ sdb_info['partitions'][0].end + 1 }}MiB" 
+                    state: present

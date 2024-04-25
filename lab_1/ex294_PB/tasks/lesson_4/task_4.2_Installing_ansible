@@ -1,0 +1,156 @@
+# Installing Ansible 2.8 using pip
+
+  572  dnf remove ansible
+  
+
+  574  pip3 install ansible==2.8
+  
+  578  python3 -m pip install --upgrade pip
+  
+  575  python -m ensurepip --upgrade
+  576  python3 -m ensurepip --upgrade
+  577  python -m pip install --upgrade pip
+  578  python3 -m pip install --upgrade pip
+  579  pip3 install ansible==2.8
+  580  ansible --version
+  581  ansible --version | grep ansible.cfg
+  582  cat /etc/ansible/ansible.cfg.rpmsave 
+  583  #### if you get error on ansible --version bash .... no such file or dir ##########
+  584  find / -name ansible
+  585  /usr/local/bin/ansible --version
+  586  ### we need to create a soft link as follows ####
+  587  ln -s /usr/local/bin/ansible /usr/bin/ansible
+  588  ansible --version
+  589  history
+  590  ls
+  591  anisble --version
+  592  ansible --version
+  593  pwd
+  594  cd ..
+  595  ls
+  596  cd /home/ansible/
+  597  ls
+  598  ls ansible/
+  599  vim ansible.cfg
+  600  pwd
+  601  ls
+  602  mv ansible.cfg ansible/tasks/
+  603  cat ansible/tasks/ansible.cfg 
+  604  mv ansible/tasks/ansible.cfg ansible/tasks/ansible.cfg.bk
+  605  mv ansible.cfg ansible/tasks/
+  606  ls 
+  607  cd ansible/tasks/
+  608  ls
+  609  mv ansible.cfg.bk ansible.cfg.old
+  610  ls
+  611  cat ansible.cfg
+  612  ls 
+  613  cat mnodes
+  614  ansible all -m ping 
+  615  cat mnodes
+  616  cat ansible.cfg
+  617  pwd
+  618  vim ansible.cfg
+  619  ls
+  620  pwd
+  621  cd ..
+  622  ls
+  623  cd ..
+  624  ls
+  625  pwd
+  626  la ansible/
+  627  ls ansible/
+  628  cd ansible/
+  629  ls
+  630  cd tasks/
+  631  ls
+  632  vim ansible.cfg
+  633  ansible all -m ping 
+  634  ansible --version
+  635  vim ansible.cfg
+  636  ansible all -m ping 
+  637  pwd
+  638  ls
+  639  ssh mh1
+  640  ansible mh1 -m ping 
+  641  whoami
+  642  vim ansible.cfg
+  643  ansible mh1 -m ping 
+  644  ansible all -m ping 
+  645  vim ansible.cfg
+  646  ls 
+  647  vim mnodes 
+  648  cat mnodes 
+  649  ansible prod --list-hosts
+  650  ansible prod1 --list-hosts
+  651  ansible prod2 --list-hosts
+  652  ansible webservers --list-hosts
+  653  ansible linux --list-hosts
+  654  ENV PYTHONWARNINGS="ignore::DeprecationWarning"
+  655  env PYTHONWARNINGS="ignore::DeprecationWarning"
+  656  ansible linux --list-hosts
+  657  export PYTHONWARNINGS="ignore::DeprecationWarning"
+  658  ansible linux --list-hosts
+  659  vim ansible.cfg
+  660  ansible linux --list-hosts
+  661  vim ansible.cfg
+  662  ansible linux --list-hosts
+  663  vim ansible.cfg
+  664  ansible linux --list-hosts
+  665  vim ansible.cfg
+  666  ansible linux --list-hosts
+  667  vim ansible.cfg
+  668  ansible linux --list-hosts
+  669  vim ansible.cfg
+  670  ansible linux --list-hosts
+  671  vim ansible.cfg
+  672  ansible linux --list-hosts
+  673  vim ansible.cfg
+  674  export PYTHONWARNINGS=IgnoreWarnings:UserWarnings
+  675  vim ansible.cfg
+  676  ansible linux --list-hosts
+  677  export PYTHONWARNINGS=IgnoreWarnings:UserWarning
+  678  ansible linux --list-hosts
+  679  export PYTHONWARNINGS=IgnoreWarnings::UserWarning
+  680  ansible linux --list-hosts
+  681  ls 
+  682  vim mnodes 
+  683  ansible linux --list-hosts
+  684  ansible prod --list-hosts
+  685  export PYTHONWARNINGS="ignoreWarnings::UserWarning"
+  686  ansible linux --list-hosts
+  687  export PYTHONWARNINGS="ignore::UserWarning"
+  688  ansible linux --list-hosts
+  689  source ~/.bashrc
+  690  ansible linux --list-hosts
+  691  reboot now 
+  692  pwd
+  693  cd ansible/
+  694  ls
+  695  cd tasks/
+  696  ls
+  697  ansible linux --list-hosts
+  698  cat ~/.bashrc
+  699  vim ~/.bashrc
+  700  ansible linux --list-hosts
+  701  vim ~/.bashrc
+  702  ansible linux --list-hosts
+  703  PYTHONWARNINGS="ignore::UserWarning"
+  704  ansible linux --list-hosts
+  705  export PYTHONWARNINGS="ignore::UserWarning"
+  706  ansible linux --list-hosts
+  707  exit
+  708  ls
+  709  cd ansible/tasks/
+  710  sl
+  711  ls
+  712  ansible linux --list-hosts
+  713  export PYTHONWARNINGS="ignore::UserWarning"
+  714  ansible linux --list-hosts
+  715  vim ~/.bashrc
+  716  ansible linux --list-hosts
+  717  source ~/.bashrc
+  718  ansible linux --list-hosts
+  719  vim ansible.cfg
+  720  ansible linux --list-hosts -u root
+

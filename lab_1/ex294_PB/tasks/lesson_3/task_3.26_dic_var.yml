@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: false
+  vars:
+          dict:
+                  key1: value1
+                  key2: value2
+  tasks:
+          - name: Display variable
+            debug:
+                    msg: "{{ dict.key1 }}"

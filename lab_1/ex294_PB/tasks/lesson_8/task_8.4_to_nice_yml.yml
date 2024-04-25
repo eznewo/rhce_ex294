@@ -1,0 +1,8 @@
+---
+- hosts: mh1
+  become: true
+  gather_facts: true
+  tasks:
+          - name: Display out put to-nice-yml format
+            debug:
+                    msg: "{{ ansible_facts | to_nice_yaml }}"

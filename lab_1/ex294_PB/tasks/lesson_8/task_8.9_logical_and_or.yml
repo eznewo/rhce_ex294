@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+          - name: Displaying FQDN using Logical and ( (a and b) or (c and d))
+            debug:
+                    msg: "{{ ansible_facts['fqdn'] }}"
+            when: (ansible_facts['hostname'] == "mh2" and ansible_facts['distribution_major_version'] == "8") or (ansible_facts['hostname']=="mh4" and ansible_facts['distribution_major_version']=="7")
+          - name: Using logical and 
+            debug:
+                    msg: "{{ ansible_facts['fqdn'] }}"
+            when: () and () 

@@ -1,0 +1,34 @@
+# Introduction to Ansible 
+
+PRINCE BAJAJIntroducing Exam Objectives and Exam Format
+ On the exam, You are expected to perform different System Administration related tasks using Ansible. So as a prerequisite
+you must be very familiar with RHCSA Objectives and must know different commands used for configuring RedHat Linux
+System.
+ You will be working with multiple systems and you will be asked to Install and configure Ansible control node and then use
+this to perform different tasks on remote machines called managed hosts.
+ Exam is based on RedHat Linux 8 and Ansible Engine 2.8.
+For more details, you can visit Red hat website,
+https://www.redhat.com/en/services/training/ex294-red-hat-certified-engineer-rhce-exam-red-hat-enterprise-linux-8?section=Overview
+PRINCE BAJAJIntroducing Ansible
+ Ansible is an Open source IT automation tool developed to configure multiple systems, deploy software, and orchestrate
+more advanced IT tasks such as continuous deployments or zero downtime rolling updates.
+ Ansible is written in Python. Ansible modules can be written in Python, Perl and in some other languages.
+ Main goal of Ansible is simplicity and ease of use. Ansible playbooks are written in YAML which can be understood by one
+even not much familiar with language.
+ Ansible uses Open SSH as transport and It is very secure and reliable.
+ Due to simplicity, Ansible can be used by wide variety of departments to manage small setup of hosts to thousands of
+instances.
+ Ansible manages machines in agent-less manner. Ansible modules are transferred to remote machines to set the desired
+states and they return JSON output on Ansible control node. No program is installed on remote machines.
+ Ansible does not use any resource on remote machine when doing nothing.
+PRINCE BAJAJAnsible in Action Diagram
+OpenSSH Transport
+OpenSSH Transport
+Ansible Control Node
+OpenSSH Transport
+OpenSSH Transport
+PRINCE BAJAJ
+Ansible Managed Node 1
+Ansible Managed Node 2
+Ansible Managed Node 3
+Ansible Managed Node N

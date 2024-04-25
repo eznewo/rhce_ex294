@@ -1,0 +1,9 @@
+---
+- hosts: mh1
+  become: true
+  gather_facts: true
+  tasks:
+          - name: Displaying data with no filter
+            debug:
+                    msg: "{{ ansible_facts }}"
+

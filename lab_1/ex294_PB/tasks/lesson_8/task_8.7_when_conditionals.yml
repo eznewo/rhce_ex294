@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Display the FQDN 
+            debug:
+                    msg: "{{ ansible_facts }}"
+            when: ansible_facts['hostname']=="mh1"
+          
+          - name: Installing httpd on webservers
+            yum:
+                    name: httpd
+                    state: present
+                    #when: ansible_inventory in groups['webservers']
+            when: ansible_facts['hostname']=="mh1"
+          - name: Start and enable Services
+            service:
+                    name: httpd
+                    state: started
+                    enabled: yes
+
+
+

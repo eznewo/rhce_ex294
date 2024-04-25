@@ -1,0 +1,12 @@
+---
+- hosts: mh1
+  become: true
+  tasks:
+          - name: Read info
+            parted:
+                    device: /dev/sdb
+                    unit: MiB
+            register: sdb_info
+          - name: Displaying info
+            debug:
+                    msg: "{{ sdb_info }}"

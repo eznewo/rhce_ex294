@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+          - name: Config firewall rule
+            firewalld:
+                    service: http
+                    state: enabled
+                    permanent: yes
+            notify: Reload firewall
+                  
+  handlers:
+          - name: Reload firewall
+            service:
+                    name: firewalld
+                    state: reloaded
+

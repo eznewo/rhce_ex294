@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Reading device info
+            parted: device=/dev/sdb unit=MiB
+            register: sdb_info
+
+          - name: Displaying device info
+            debug:
+                    msg: "{{ sdb_info }}"

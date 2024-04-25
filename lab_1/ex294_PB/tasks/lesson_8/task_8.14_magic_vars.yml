@@ -1,0 +1,7 @@
+---
+- hosts: mh1
+  gather_facts: false
+  tasks:
+          - name: Displaying Magic Variables
+            debug:
+                    msg: "{{ vars }}"

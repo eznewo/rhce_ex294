@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Creating file 
+            file:
+                    path: /root/mark_file
+                    owner: mark
+                    group: mark
+                    mode: '2760'
+                    state: touch
+

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Creating File System
+            filesystem:
+                    dev: /dev/sdb3
+                    fstype: ext4
+                    
+
+          - name: Mounting A File System
+            mount:
+                    src: /dev/sdb3
+                    path: /mnt/parted_sdb3
+                    fstype: ext4
+                    state: mounted
+
+

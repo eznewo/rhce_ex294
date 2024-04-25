@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+          - name: Creating Directory
+            file:
+                    path: /web/html
+                    state: directory
+          - name: Creating group Testing on Webservers
+            group:
+                    name: testing
+                    state: present
+
+- hosts: prod
+  become: true
+  tasks:
+          - name: Creating group Networks on pord
+            group:
+                    name: networks
+                    state: present
+
+

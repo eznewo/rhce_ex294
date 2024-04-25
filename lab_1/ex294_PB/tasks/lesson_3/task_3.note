@@ -1,0 +1,14 @@
+# Impprtant during filter out variables from ansible facts:
+
+# to display facts
+ ansible mh1 -m setup 
+
+# to diplay that has the word "ansible_"
+ ansible mh1 -m setup | grep ansible_
+
+# to display nodename
+ ansible mh1 -m setup | grep ansible_nodename
+
+# to diplay 10 lines after find the workd "anisble_"
+ ansible mh1 -m setup | grep -a10 ansible
+

@@ -1,0 +1,12 @@
+---
+users:
+        - username: ababa
+          age: 40
+          department: HR
+        - username: kababa
+          age: 30
+          department: Accouting
+        - username: dababa
+          age: 20
+          department: Mgt
+       

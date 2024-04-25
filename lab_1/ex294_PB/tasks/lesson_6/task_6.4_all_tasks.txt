@@ -1,0 +1,428 @@
+  276  ansible all -m ping
+  277  export PYTHONWARNINGS=igrnore::UserWarning
+  278  source ~/.bashrc
+  279  ansible all -m ping
+  280  export PYTHONWARNINGS=ignore::UserWarning
+  281  source ~/.bashrc
+  282  ansible all -m ping 
+  283  vim lesson_6/task_6.1_service.yml
+  284  vim lesson_6/task_6.1_service.yml 
+  285  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  286  vim lesson_6/task_6.1_service.yml 
+  287  ansile-playbook lesson_6/task_6.1_service.yml 
+  288  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  289  vim lesson_6/task_6.1_service.yml 
+  290  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  291  ansible-playbook lesson_6/task_6.1_service.yml -C
+  292  vim lesson_6/task_6.1_service.yml 
+  293  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  294  ansible-playbook lesson_6/task_6.1_service.yml -C
+  295  ansible-playbook lesson_6/task_6.1_service.yml 
+  296  ansible-doc yum
+  297  clear
+  298  ansible webservers -a "systemctl status httpd" 
+  299  ansible prod -a "systemctl status mariadb"
+  300  vim lesson_6/task_6.2_user.yml
+  301  ansible-playbook lesson_6/task_6.2_user.yml 
+  302  ansible all -a "id mark"
+  303  vim lesson_6/task_6.3_file.yml
+  304  ansible-doc file 
+  305  vim lesson_6/task_6.3_file.yml
+  306  ansible all -a "groupid mark"
+  307  ansible all -a "groups"
+  308  ssh mh1
+  309  vim lesson_6/task_6.3_file.yml
+  310  ansible-playbook lesson_6/task_6.3_file.yml 
+  311  ansible all -a "ls /root/mark_file"
+  312  ansible all -a "ls /root/mark_file" -b
+  313  ansible all -a "ls -l /root/mark_file" -b
+  314  ansible all -m file -a "path=/root/file1.txt state=touch" -b -C 
+  315  ansible all -m file -a "path=/root/file1.txt state=touch" -b 
+  316  ansible all -m file -a "path='/root/file1.txt' mode='770' state=touch" -b 
+  317  ansible all -a "ls -l /root/" -b
+  318  ansible all -m copy -a "content='This text file created using Ansible Capito' dest='/root/file1.txt' state=present" -b
+  319  ansible all -m copy -a "content='This text file created using Ansible Capito' dest='/root/file1.txt' " -b
+  320  ansible all -a "cat /root/file1.txt" -b
+
+    1  whoami
+    2  pwd
+    3  ip a
+    4  exi
+    5  ext
+    6  exit
+    7  whoami
+    8  hostname
+    9  clear
+   10  ls 
+   11  whoami
+   12  ls 
+   13  cd ansible/
+   14  ls
+   15  cd lab_helper_file/
+   16  ls
+   17  vim inst_ansible_eper.sh
+   18  cat inst_ansible_eper.sh 
+   19  mv inst_ansible_eper.sh inst_ansible_epel.sh 
+   20  ls 
+   21  ls
+   22  cat ssh_setup.sh 
+   23  l s
+   24  ls 
+   25  exit
+   26  ansible-doc -l
+   27  ansible-doc -l | grep win
+   28  parprob
+   29  parpro file
+   30  parprob fine
+   31  ansible-doc ping 
+   32  ansible-parted
+   33  ansible-doc parted
+   34  su root
+   35  ls
+   36  cd ansible/
+   37  ls
+   38  cd tasks/
+   39  sl
+   40  ls
+   41  ll
+   42  tree lesson_3/
+   43  vim lesson_3/task_3.29_vars_file.yml
+   44  ll lesson_3/
+   45  su root
+   46  ls 
+   47  su ansible/
+   48  su - ansible
+   49  ls
+   50  exit
+   51  ls 
+   52  pwd
+   53  cd ansible/
+   54  ls
+   55  cd tasks/
+   56  ls
+   57  pwd
+   58  cd ..
+   59  ls
+   60  cd ..
+   61  ls
+   62  cd ll
+   63  ll
+   64  ls
+   65  ls 
+   66  cd ansible/
+   67  ls
+   68  cd tasks/
+   69  ls
+   70  dnf install ansible
+   71  ls 
+   72  ll
+   73  ls 
+   74  cd ..
+   75  ls
+   76  ./lab_helper_file/shutdown_all_vms.sh 
+   77  pwd
+   78  su ~
+   79  cd ~
+   80  ls
+   81  cd ansible/
+   82  ls
+   83  cd lab_helper_file/
+   84  cat shutdown_all_vms.sh 
+   85  ansible all -m shell -a "shutdown now" -b
+   86  ls
+   87  cd ..
+   88  ls
+   89  cd ..
+   90  ls
+   91  cd ansible/
+   92  ls
+   93  cd tasks/
+   94  ls
+   95  ansible all -m ping
+   96  ls
+   97  su root
+   98  ls 
+   99  cd ansible/
+  100  ls
+  101  dc tasks/
+  102  ls
+  103  ls lab_helper_file/
+  104  cd lab_helper_file/
+  105  ls
+  106  ll
+  107  cat 2_ssh_setup.sh 
+  108  ls 
+  109  su root
+  110  pwd
+  111  su root
+  112  pwd
+  113  l;s
+  114  ls
+  115  ansible all -m ping 
+  116  ansible all -m ping -b
+  117  ssh mh1
+  118  ls
+  119  cd ..
+  120  ls
+  121  pwd
+  122  ls
+  123  cd tasks/
+  124  ls
+  125  ansible --version
+  126  ansible all -m ping 
+  127  su root
+  128  whoami
+  129  ssh-keygen -t rsa
+  130  su root
+  131  ip a
+  132  ping 192.168.99.11
+  133  ping 192.168.99.100
+  134  su root
+  135  vim     ansible.cfg
+  136  sudo vim ansible.cfg
+  137  ansible all -m ping 
+  138  export PYTHONWARNINGS='ignore::UserWarning'
+  139  ansible all -m ping 
+  140  ansible all -m ping
+  141  ls
+  142  vim mnodes 
+  143  ansible all -m ping
+  144  su root
+  145  ansible all -m user -a "name=test state=present" -b 
+  146  clear
+  147  ############# MOTD ###################
+  148  # ansible all -m copy -a "content='Welcome to Ansible managed Nodes' dest='/etc/motd'" -b 
+  149  ansible-doc copy
+  150  ansible-doc file
+  151  ansible all -m copy -a "content='Welcome to Ansible Managed Nodes' dest='/etc/motd'" -b
+  152  ansible all -m shell -a "cat /etc/motd" -b
+  153  ssh mh1
+  154  ssh mh2
+  155   ssh mh3
+  156  ssh mh4
+  157  ansible-doc repository
+  158  ansible-doc yum-repository
+  159  ansible-doc yum-repo
+  160  ansible-doc -l | grep yum
+  161  ansible-doc yum_repository
+  162    yum_repository:
+  163      name: epel
+  164      description: EPEL YUM repo
+  165      file: external_repos
+  166      baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+  167      gpgcheck: no
+  168  ansible all -m yum-repository -a "name='BaseOS' description='DNF BaseOS Repo' baseurl='file:///root/BaseOS' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1 " -b
+  169  ls 
+  170  ansible all -m yum_repository -a "name=AppStream description='DNF AppStream Repo' baseurl='file:///root/AppStream' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1" -b
+  171  # ansible all -m yum_repository -a "name=AppStream description='DNF AppStream Repo' baseurl='file:///root/AppStream' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1" -b
+  172  ansible all -m yum-repository -a "name='BaseOS' description='DNF BaseOS Repo' baseurl='file:///root/BaseOS' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1 " -b
+  173  ansible all -m shell -a "ls /root/ " -b
+  174  ansible all -m shell -a "ls /root/AppSream " -b
+  175  ansible all -m shell -a "ls /root/AppStream " -b
+  176  ssh mh1
+  177  ansible all -m yum-repository -a "name='BaseOS' description='DNF BaseOS Repo' baseurl='file:///root/BaseOS' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1 file='BaseOS' " -b
+  178  # ansible all -m yum_repository -a "name=AppStream description='DNF AppStream Repo' baseurl='file:///root/AppStream' gpgcheck=1 gpgkey='/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial' enabled=1 file=AppStream" -b
+  179  ssh mh1
+  180  ssh mh2
+  181  ssh mh1
+  182  ssh mh2
+  183  ssh mh1
+  184  ssh mh3
+  185  ls
+  186  ansible all -m ping 
+  187  ansible all -m yum_repository -a "name=BaseOS description='DNF BaseOS Repo' baseurl='file:///root/BaseOS' gpgcheck=1 gpgkey=/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=1 file=BaseOS" -b
+  188  ansible all -m yum_repository -a "name=AppStream description='DNF AppStream Repo' baseurl='file:///root/AppStream' gpgcheck=1 gpgkey=/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=1 file=AppStream" -b
+  189  ansible mh1 -m shell -a "ls /root/AppStream/AppStream.repo" -b 
+  190  ansible all -a "dnf repo-list"
+  191  ansible all -a "dnf repolist"
+  192  #### Lap Setup Complete #############
+  193  ansible all -m yum_repository -a "name=AppStream description='DNF AppStream Repo' baseurl='file:///root/AppStream' gpgcheck=0 gpgkey=/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=1 file=AppStream" -b
+  194  ansible all -m yum_repository -a "name=BaseOS description='DNF BaseOS Repo' baseurl='file:///root/BaseOS' gpgcheck=0 gpgkey=/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=1 file=BaseOS" -b
+  195  ls 
+  196  vim shutdown_all_vms.sh 
+  197  ./shutdown_all_vms.sh 
+  198  ls 
+  199  ansibel all -m ping 
+  200  ansible all -m ping 
+  201  ansible all -m shell -a "shutdown now " -b  
+  202  shutdown now
+  203  sudo shutdown now 
+  204  ssh mh1
+  205  ansible all -m ping 
+  206  ssh mh1
+  207  mh2
+  208  ssh mh2
+  209  ssh mh3
+  210  ssh mh4
+  211  ssh ansible@mh4
+  212  ssh ansible@mh4 -p 555
+  213  ssh ansible@mh3
+  214  ssh ansible@mh2
+  215  ssh ansible@mh1
+  216  pwd
+  217  whoami
+  218  hostname
+  219  ansible all -m ping 
+  220  ansible mh1 -m debug -a "msg='{{ 'wawa' | password_hash('sha512') }}'"
+  221  echo "ansible mh1 -m debug -a "msg='{{ 'wawa' | password_hash('sha512') }}'"" >> lesson_5/task_5.1_Intro 
+  222  sudo echo "ansible mh1 -m debug -a "msg='{{ 'wawa' | password_hash('sha512') }}'"" >> lesson_5/task_5.1_Intro 
+  223  ll
+  224  cd ..
+  225  ls
+  226  ll
+  227  sudo chown -R ansible:ansible tasks
+  228  ll
+  229  ll tasks/
+  230  ll tasks/lesson_5/
+  231  cd tasks/
+  232  ls
+  233  sudo echo "ansible mh1 -m debug -a "msg='{{ 'wawa' | password_hash('sha512') }}'"" >> lesson_5/task_5.1_Intro 
+  234  cat lesson_5/task_5.1_Intro 
+  235  vim lesson_5/task_5.4_display_file_content.yml
+  236  ansible-playbook lesson_5/task_5.4_display_file_content.yml --syntax-check
+  237  ansible-playbook lesson_5/task_5.4_display_file_content.yml 
+  238  vim lesson_5/task_5.4_display_file_content.yml 
+  239  echo "/home/ansible/ansible/create_dir_file.sh " >> lesson_5/task_5.4_display_file_content.yml 
+  240  vim lesson_5/task_5.4_display_file_content.yml 
+  241  ansible-playbook lesson_5/task_5.4_display_file_content.yml 
+  242  vim lesson_5/task_5.4_display_file_content.yml 
+  243  ansible-playbook lesson_5/task_5.4_display_file_content.yml 
+  244  vim lesson_5/task_5.1_Intro 
+  245  cat lesson_5/task_5.4_display_file_content.yml >> lesson_5/task_5.1_Intro 
+  246  vim lesson_5/task_5.1_Intro 
+  247  ls
+  248  ll lesson_5
+  249  vim lesson_5/task_5.5_privilege_escalation
+  250  vim /etc/sudoer
+  251  sudo vim /etc/sudoer 
+  252  sudo vim /etc/sudoers
+  253  ansible-doc lineinfile
+  254  ansible all -m lineinfile -a "path='/etc/sudores' state=present line='ansible ALL=(ALL) NOPASSWD: ALL' backup=yes validate=/user/sbin/visudo -cf %s" -u root -C
+  255  ansible all -m lineinfile -a "path='/etc/sudores' state=present line='ansible ALL=(ALL) NOPASSWD: ALL' backup=yes validate=/user/sbin/visudo -cf %s" -u root 
+  256  ansible all -m lineinfile -a "path=/etc/sudores state=present line='ansible ALL=(ALL) NOPASSWD: ALL' backup=yes validate=/usr/sbin/visudo -cf %s" -u root 
+  257  su root
+  258  ssh mh1
+  259  ssh mh4
+  260  ls
+  261  ip a
+  262  ls
+  263  cd ansible/
+  264  ls
+  265  cd tasks/
+  266  ls
+  267  history
+  268  su root
+  269  exit
+  270  ls 
+  271  cd ansible/
+  272  ls
+  273  cd tasks/
+  274  sl
+  275  ls
+  276  ansible all -m ping
+  277  export PYTHONWARNINGS=igrnore::UserWarning
+  278  source ~/.bashrc
+  279  ansible all -m ping
+  280  export PYTHONWARNINGS=ignore::UserWarning
+  281  source ~/.bashrc
+  282  ansible all -m ping 
+  283  vim lesson_6/task_6.1_service.yml
+  284  vim lesson_6/task_6.1_service.yml 
+  285  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  286  vim lesson_6/task_6.1_service.yml 
+  287  ansile-playbook lesson_6/task_6.1_service.yml 
+  288  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  289  vim lesson_6/task_6.1_service.yml 
+  290  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  291  ansible-playbook lesson_6/task_6.1_service.yml -C
+  292  vim lesson_6/task_6.1_service.yml 
+  293  ansible-playbook lesson_6/task_6.1_service.yml --syntax-check
+  294  ansible-playbook lesson_6/task_6.1_service.yml -C
+  295  ansible-playbook lesson_6/task_6.1_service.yml 
+  296  ansible-doc yum
+  297  clear
+  298  ansible webservers -a "systemctl status httpd" 
+  299  ansible prod -a "systemctl status mariadb"
+  300  vim lesson_6/task_6.2_user.yml
+  301  ansible-playbook lesson_6/task_6.2_user.yml 
+  302  ansible all -a "id mark"
+  303  vim lesson_6/task_6.3_file.yml
+  304  ansible-doc file 
+  305  vim lesson_6/task_6.3_file.yml
+  306  ansible all -a "groupid mark"
+  307  ansible all -a "groups"
+  308  ssh mh1
+  309  vim lesson_6/task_6.3_file.yml
+  310  ansible-playbook lesson_6/task_6.3_file.yml 
+  311  ansible all -a "ls /root/mark_file"
+  312  ansible all -a "ls /root/mark_file" -b
+  313  ansible all -a "ls -l /root/mark_file" -b
+  314  ansible all -m file -a "path=/root/file1.txt state=touch" -b -C 
+  315  ansible all -m file -a "path=/root/file1.txt state=touch" -b 
+  316  ansible all -m file -a "path='/root/file1.txt' mode='770' state=touch" -b 
+  317  ansible all -a "ls -l /root/" -b
+  318  ansible all -m copy -a "content='This text file created using Ansible Capito' dest='/root/file1.txt' state=present" -b
+  319  ansible all -m copy -a "content='This text file created using Ansible Capito' dest='/root/file1.txt' " -b
+  320  ansible all -a "cat /root/file1.txt" -b
+  321  history
+  322  vim lesson_6/task_6.4_cre_file_con_adhoc.sh
+  323* 
+  324  vim lesson_6/task_6.4_cre_file_con_adhoc.sh
+  325  cp lesson_6/task_6.4_cre_file_con_adhoc.sh lesson_6/task_6.4_all_tasks.txt
+  326  ls lesson_6/task_6.4_all_tasks.txt 
+  327  vim lesson_6/task_6.5_archive.yml
+  328  ansible-doc archive
+  329  vim lesson_6/task_6.5_archive.yml
+  330  ansible-playbook lesson_6/task_6.5_archive.yml --syntax-check
+  331  ansible-playbook lesson_6/task_6.5_archive.yml -C
+  332  ansible-playbook lesson_6/task_6.5_archive.yml 
+  333  vim lesson_6/task_6.5_archive.yml
+  334  ansible-playbook lesson_6/task_6.5_archive.yml 
+  335  ansible-doc archive
+  336  vim lesson_6/task_6.5_archive.yml
+  337  ansible-playbook lesson_6/task_6.5_archive.yml 
+  338  ansible webservers -a "ls /root/" -b 
+  339  vim lesson_6/task_6.5_archive.yml
+  340  ansible-playbook lesson_6/task_6.5_archive.yml 
+  341  ansible webservers -a "ls /root/" -b 
+  342  ansible webservers -a "rm /root/etc.tar" -b 
+  343  ansible webservers -m file -a "path='/root/etc.tar' state=absent" -b 
+  344  ansible webservers -a "ls /root/" -b 
+  345  vim lesson_6/task_6.6_cronjobs.yml
+  346  ldkjfksldjf
+  347  ls
+  348  ansible-doc cron
+  349  vim lesson_6/task_6.6_cronjobs.yml
+  350  ansible-playbook lesson_6/task_6.6_cronjobs.yml --syntax-check
+  351  vim lesson_6/task_6.6_cronjobs.yml 
+  352  ansible-playbook lesson_6/task_6.6_cronjobs.yml --syntax-check
+  353  vim lesson_6/task_6.6_cronjobs.yml 
+  354  ansible-playbook lesson_6/task_6.6_cronjobs.yml --syntax-check
+  355  ansible-playbook lesson_6/task_6.6_cronjobs.yml -C
+  356  ansible-playbook lesson_6/task_6.6_cronjobs.yml
+  357  vim lesson_6/task_6.6_cronjobs.yml 
+  358  ansible-playbook lesson_6/task_6.6_cronjobs.yml 
+  359  ansible all -m shell -s "systemctl status cron"
+  360  ansible all -m shell -a "systemctl status cron"
+  361  ansible-doc yum
+  362  vim lesson_6/task_6.6_inst_cron.yml
+  363  ansible-playbook lesson_6/task_6.6_inst_cron.yml --syntax-check
+  364  vim lesson_6/task_6.6_inst_cron.yml
+  365  ansible-playbook lesson_6/task_6.6_inst_cron.yml --syntax-check
+  366  ansible-playbook lesson_6/task_6.6_inst_cron.yml 
+  367  vim lesson_6/task_6.6_inst_cron.yml
+  368  ansible-playbook lesson_6/task_6.6_inst_cron.yml 
+  369  ansible all -m shell -a "systemctl status crond"
+  370  vim lesson_6/task_6.6_inst_cron.yml
+  371  ansible-playbook lesson_6/task_6.6_cronjobs.yml 
+  372  vim  lesson_6/task_6.6_cronjobs.yml 
+  373  ansible-playbook lesson_6/task_6.6_cronjobs.yml 
+  374  ansible-doc crond
+  375  ansible-doc cron
+  376  ansible-playbook lesson_6/task_6.6_cronjobs.yml 
+  377  vim  lesson_6/task_6.6_cronjobs.yml 
+  378  ansible-playbook lesson_6/task_6.6_cronjobs.yml 
+  379  ansible all -a "crontab -l"
+  380  ansible all -a "crontab -l" -b
+  381  history
+  382  history >> lesson_6/task_6.4_all_tasks.txt 

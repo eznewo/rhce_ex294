@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+          - name: Configuring error handling using ==> default('') 
+            debug:
+                    msg: "{{ ansible_facts['devices']['sda']['partitions']['sda8']['size'] | default('Block device does not exist') }}"

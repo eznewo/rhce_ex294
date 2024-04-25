@@ -1,0 +1,7 @@
+---
+- hosts: mh1
+  gather_facts: false
+  tasks:
+          - name: list fileter "Min, Max and unique"
+            debug:
+                    msg: "The min is: {{ [1,2,3,4,5] | min }} The max is:  {{ [1,2,3,4,5] | max }} and the Uniques {{ [1,2,2,2,3] | unique }}"

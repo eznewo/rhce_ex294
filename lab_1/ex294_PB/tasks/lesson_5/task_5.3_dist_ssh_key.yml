@@ -1,0 +1,9 @@
+# distributing ssh key for amsible user to remote hosts:
+
+# switch to ansible host and generate the ssh key:
+        $ su ansible
+        $ ssh-keygen -t rsa
+
+# switch to root user using ad hoc command      
+        $ ansible all -m user -a "name=ansible password='{{ 'wawa' | password_hash('sha512') }}" -u root
+        $ ansible all -m authorized_key -a "user='ansible' state=present key='{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}'" -u root

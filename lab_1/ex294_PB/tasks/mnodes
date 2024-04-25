@@ -1,0 +1,18 @@
+[prod1]
+mh1
+
+[prod2]
+mh2
+
+[webservers]
+mh3
+mh4 ansible_port=555
+
+[prod:children]
+prod1
+prod2
+
+[linux:children]
+prod
+webservers
+

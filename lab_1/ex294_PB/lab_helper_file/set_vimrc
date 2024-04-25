@@ -1,0 +1,10 @@
+# Vimrc file setting
+# ai : autoindent - copy the previous line's indentation
+# ts=2 : tabstop - set the number of spaces that the Tab key uses, when pressed
+# sw=2 : shiftwidth - number of spaces to use with autoindent
+# et : expandtab - use the space character as whitespace instead of Tab
+# cuc : cursorcolumn - highlight the column the cursor is on
+# nu: number - turn on line numbering
+
+
+echo "autocmd FileType yaml setlocal ai ts=2 sw=2 et cuc nu" >> ~/.vimrc

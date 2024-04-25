@@ -1,0 +1,7 @@
+---
+users:
+        - name: mark
+          age: 35
+        - name: lisa
+          age: 30
+
