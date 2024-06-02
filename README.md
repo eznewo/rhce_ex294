@@ -1,4 +1,5 @@
-![alt text](../rhce_ex294/lab_1/ex294_PB/lab_helper_file/imgs/rhce.png)
+![alt text](https://github.com/eznewo/rhce_ex294/blob/main/lab_1/ex294_PB/lab_helper_file/imgs/rhce.png)
+
 
 Ansible RHCE EX294 Prep
 
