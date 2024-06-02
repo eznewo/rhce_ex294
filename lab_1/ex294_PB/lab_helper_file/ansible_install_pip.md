@@ -1,4 +1,4 @@
-#!/bin/bash
+## INSTALLING ANSIBLE USNING PIP
 
 # to install pip 
 python3 -m pip install --upgrade --user pip

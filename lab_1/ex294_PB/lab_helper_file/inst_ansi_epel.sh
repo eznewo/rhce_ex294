@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# this is installation of ansible using epel
+# to install ansible using epel
+# sudo dnf install epel-release
 
-sudo dnf install epel-release
-# to check if provided ansibe 
+# to install ansible using dnf
+# to check if dnf provide ansible
 # dnf provides ansible
 
-# installation of ansible
-dnf install ansible
+# to install using dnf
+sudo dnf install ansible* -y
 
-# to print out the version of ansible 
+echo "=============================================="
+echo "**********************************************"
+echo " Ansible is installed check below:  "
+echo "          * ansible version                   "
+ehco "          * location of config file           "
+echo "          * other related info                "
+echo " ******************************************** "
+echo "=============================================="
+
 ansible --version
-
