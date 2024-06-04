@@ -1,17 +1,34 @@
-## INSTALLING ANSIBLE USNING PIP
+## Ansible Installation
 
-# to install pip 
+### 1. INSTALLING ANSIBLE USNING PIP
+
+#### 1.1 To Install `pip` 
+
+```bash
 python3 -m pip install --upgrade --user pip
-
-# 
-python3 -m pip install --user ansible
-install-pip-global.sh
-
-
-
-
 ```
-Detailed description fo the:
+
+```bash
+python3 -m pip install --user ansible
+# install-pip-global.sh
+```
+
+</br></br>
+_look below for detail description of the above commands_</sup>
+
+
+
+
+
+
+
+
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+
+```dotnetcli
+Detailed description of the above commands:
 
 ####################################################
 # - $ python3 -m pip install --upgrade --user pip  #

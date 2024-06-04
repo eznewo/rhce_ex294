@@ -1,3 +1,0 @@
-# Privilege escalation ad hoc command
-
-ansible all -m lineinfile -a "" -u root

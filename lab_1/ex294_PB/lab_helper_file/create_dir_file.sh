@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ☕ e@ኤር ➤➤ cat lab_setup_helper/creat_dir_file.sh 
 # this script creates 12 lesson folders and 12 task files inside each folder
 for n in {1..12}; 

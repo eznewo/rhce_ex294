@@ -6,4 +6,4 @@
           - name: Creating user
             user:
                     name: mark
-                    password: "{{ 'wawa' | password_hash('sha512') }}"
+                    password: "{{ 'eritrea' | password_hash('sha512') }}"
