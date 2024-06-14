@@ -6,7 +6,7 @@
             yum:
                     name: httpd
                     state: present
-          - name: started and ebabling httpd
+          - name: started and enbabling httpd
             service:
                     name: httpd
                     state: started
@@ -26,5 +26,5 @@
                     name: mariadb
                     state: started
                     enabled: yes
-
+---
 

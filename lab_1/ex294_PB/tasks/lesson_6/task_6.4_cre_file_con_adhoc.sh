@@ -1,4 +1,35 @@
-### Adhoc
+#!/bin/bash
+
+# Creating file and content using Adhoc
+# create a file file1.txt inside root directory
+
+# First let's check what we have 
+ansible all -a "ls /root/"
+
+# If you need to be root use option -b for become root
+ansible all -a "ls /root/" -b
+
+# to display a long listing
+ansible all -a "ls -l /root/" -b
+
+# To create the file file1.txt inside /root directory with dry run 
+# just to check if the command works or not
+ansible all -m file -a "path=/root/file1.txt state=touch" -b -C 
+
+# To create the file file1.txt inside /root directory
+ansible all -m file -a "path=/root/file1.txt state=touch" -b 
+
+# To create the file file1.txt inside /root directory with permission 770
+ansible all -m file -a "path='/root/file1.txt' mode='770' state=touch" -b
+
+# to list files in /root dir
+ansible all -a "ls -l /root/" -b
+
+# to add content to the file1.txt 
+ansible all -m copy -a "content='This text file created using Ansible Capito' dest='/root/file1.txt' " -b
+
+# To check the content of the file 
+ansible all -a "cat /root/file1.txt" -b
 
 
 
