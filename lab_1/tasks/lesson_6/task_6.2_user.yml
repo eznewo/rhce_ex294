@@ -7,3 +7,4 @@
             user:
                     name: mark
                     password: "{{ 'eritrea' | password_hash('sha512') }}"
+---

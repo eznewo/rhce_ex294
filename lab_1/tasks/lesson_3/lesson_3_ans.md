@@ -27,6 +27,8 @@
 
 #### Firewall
  - Allowing port 80 
+
+```yaml
 ---
 - hosts: all
   become: true
@@ -44,11 +46,13 @@
                     name: firewalld
                     state: reloaded
 ---
+```
 
 #### Display variables
 - Ex 1:
     - using Dictionary vars key and value
 
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -59,9 +63,12 @@
             debug:
                     msg: "{{ key }}"
 ---
+```
 
 - Ex 2:
     - using Dictionary vars key and value
+
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -74,9 +81,13 @@
             debug:
                     msg: "{{ dict.key1 }}"
 ---
+```
+
 
 Ex 3:
     - using named list
+
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -90,11 +101,13 @@ Ex 3:
             debug:
                     msg: "{{ list[1] }}"
 ---
-
+```
 
 Ex 4: 
     - using dictionary list:
-    
+   
+
+```yaml 
 ---
 - hosts: all
   gather_facts: false
@@ -111,6 +124,8 @@ Ex 4:
             debug:
                     msg: "{{ users[0].name }}"
 ---
+```
+
 
 Ex 5:
     - Creating var file to be used as a var file:
@@ -120,6 +135,7 @@ Ex 5:
     vim task_3.29_vars_file.yml
 ```
 
+```yaml
 ---
 users:
         - name: mark
@@ -128,10 +144,12 @@ users:
           age: 30
 
 ---
+```
 
 ex 6:
     - Using the var file create above
 
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -142,10 +160,13 @@ ex 6:
             debug:
                     msg: "{{ users[1].name }}"
 ---
+```
+
 
 Ex 7 
     - Using var prompt 001
 
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -161,12 +182,14 @@ Ex 7
             debug:
                     msg: "{{ username , password }}"
 ---
+```
 
 
 Ex 8 
     - Using var prompt 002
 
 
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -179,11 +202,12 @@ Ex 8
             debug:
                     msg: "{{ var }}"
 ---
-
+```
 
 Ex 9
     - Display facts
-    
+
+```yaml 
 ---
 - hosts: mh1
   tasks:
@@ -192,3 +216,4 @@ Ex 9
                     msg: "{{ ansible_facts.devices.sda.partitions.sda2.size }}"
 ---
 
+```
