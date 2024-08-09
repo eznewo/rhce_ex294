@@ -15,10 +15,11 @@ sudo dnf install ansible* -y
 
 echo "=============================================="
 echo "**********************************************"
-echo " Ansible is installed check below:  "
+echo " Ansible is installed check below:            "
 echo "          * ansible version                   "
 ehco "          * location of config file           "
 echo "          * other related info                "
+echo " ansible --version                            "
 echo " ******************************************** "
 echo "=============================================="
 
